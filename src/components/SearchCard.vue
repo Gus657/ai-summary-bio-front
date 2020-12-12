@@ -1,26 +1,30 @@
 <template>
     <div>
-        <md-card class="card">
+        <md-card class="card  md-elevation-24">
          <md-card-header>
              <div class="md-title">
                  Summary of Bio Evaluation
              </div>
 
-            <md-content>
+            
                 <div class="md-title">
                     <md-field>
                         <label>Type your user here!</label>
                         <md-input class="md-elevation-1 font-color" v-model="user"></md-input>
                     </md-field>
                 </div>
-            </md-content>
+        
     
-            <span class="md-subhead">  <i>See your username next to ' / '  on your torre profile link</i></span>   
+            <span class="md-subhead">  <i>You can see your username next to ' / '  on your torre profile link</i></span>  
+            <br>
+             <md-button @click="searchUser()" class="md-raised font-color button-color">Search</md-button>
+            <md-button @click="clearData()" class="md-raised font-color button-color">Clear</md-button> 
          </md-card-header>
-            <md-button @click="searchUser()" class="md-raised font-color button-color">Search</md-button>
-            <md-button @click="clearData()" class="md-raised font-color button-color">Clear</md-button>
+           
 
-            <BioData v-show="visible"></BioData>
+            <BioData v-show="visible"
+                :peopleData="people"
+            ></BioData>
    </md-card>
 
     </div>
@@ -36,7 +40,13 @@ export default {
     data(){
         return {
             user:'',
-            visible: false
+            visible: false,
+            people: {
+                name:'Gus',
+                picture: '',
+                headline: 'Web Developer',
+                summary: 'Soy una persona apasionada por aprender, desde 2016 me dedico al diseño gráfico y digital y desde 2017 al desarrollo de software, gracias a esto pude encontrar una gran cantidad de oportunidades para seguir aprendiendo, nuevas oportunidades para mejorar y ampliar mis conocimientos, me he dado cuenta que al colaborar con otros fortalezco mis conocimientos y habilidades, además de hacer nuevas amistades.'
+            }
         }
     },
     methods: {

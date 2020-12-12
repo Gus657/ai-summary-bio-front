@@ -23,13 +23,7 @@ export default {
   margin-left: 30px;
   margin-right: 30px;
 }
-.md-content {
-    width: 100%;
-    height: auto;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
+
   .card{
     background-color: rgb(67, 67, 67);
     color: white;
