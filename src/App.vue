@@ -23,9 +23,13 @@
             </div>
     </md-card>
     <!-- Search user card, this will display the bio data and evaluation options when home tab is selected -->
-    <SearchCard v-show="homeButton"></SearchCard>
+    <SearchCard 
+        v-show="homeButton"
+    ></SearchCard>
     <!-- Example Card options, this will display an AI fucntionality example whe the example tab is selected-->
-    <Example v-show="exampleButton"></Example>
+    <Example 
+        v-show="exampleButton"
+    ></Example>
   </div>
 </template>
 
@@ -34,60 +38,62 @@
 import SearchCard from "./components/SearchCard"
 import Example from "./components/Example"
 
-export default {
-  name: 'App',
-  components: {
-    SearchCard,
-    Example
-  },
-  data(){
-    return {
-      
-      homeButton: true,
-      exampleButton: false,
-      styleFocus: 'button-color',
-      styleUnfocus: 'button-color-unfocus'
-    }
-    
-  },
-  methods: {
-    focusHome(){
-      this.homeButton = true;
-      this.exampleButton = false;
+  export default {
+    name: 'App',
+    components: {
+      SearchCard,
+      Example
     },
-    focusExample(){
-      this.homeButton = false;
-      this.exampleButton = true;
+    data(){
+      return {
+        
+        homeButton: true,
+        exampleButton: false,
+        styleFocus: 'button-color',
+        styleUnfocus: 'button-color-unfocus'
+      }
+      
+    },
+    methods: {
+      focusHome(){
+        this.homeButton = true;
+        this.exampleButton = false;
+      },
+      focusExample(){
+        this.homeButton = false;
+        this.exampleButton = true;
+      }
     }
-  }
 
-}
+  }
 </script>
 
-<style>
-#app {
-  text-align: center;
-  margin-top: 60px;
-  margin-left: 30px;
-  margin-right: 30px;
-}
-  .card{
-    background-color: rgba(67, 67, 67, 0.755);
-    color: white;
-  }
-  .font-color{
-    color: white;
-  }
- .button-color{
-     background-color: rgb(53, 202, 3);
-  }
-   .button-color-unfocus{
-     background-color: rgb(79, 104, 71);
-  }
 
-    body{
-  background: #8cb549;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #8cb549, #3CA55C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #8cb549, #3CA55C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-     }
+
+<style>
+  #app {
+    text-align: center;
+    margin-top: 60px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+    .card{
+      background-color: rgba(67, 67, 67, 0.755);
+      color: white;
+    }
+    .font-color{
+      color: white;
+    }
+    .button-color{
+      background-color: rgb(53, 202, 3);
+    }
+    .button-color-unfocus{
+      background-color: rgb(79, 104, 71);
+    }
+
+ body{
+    background: #8cb549; 
+    background: -webkit-linear-gradient(to right, #8cb549, #3CA55C);  
+    background: linear-gradient(to right, #8cb549, #3CA55C); 
+    }
 </style>

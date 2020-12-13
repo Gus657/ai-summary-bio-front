@@ -45,50 +45,55 @@
     
     </div>
 </template>
+
+
+
 <script>
 import EvaluationCard from "./Evaluation"
 
-export default {
-    name: 'BioData',
-    props: ['peopleData', 'state'],
-    components: {
-        EvaluationCard
-    },
-    data() {
-        return {
-            visible: false,
-            buttonVisible: true,
-            positive: {
-                value: 50,
-                type: 'Positive',
-                emoji: '😁'
-            },
-            negative: {
-                 value: 30,
-                type: 'Negative',
-                emoji: '🤨'
-            },
-            neutral: {
-                 value: 50,
-                type: 'Neutral',
-                emoji: '🤐'
+    export default {
+        name: 'BioData',
+        props: ['peopleData', 'state'],
+        components: {
+            EvaluationCard
+        },
+        data() {
+            return {
+                visible: false,
+                buttonVisible: true,
+                positive: {
+                    value: 50,
+                    type: 'Positive',
+                    emoji: '😁'
+                },
+                negative: {
+                    value: 30,
+                    type: 'Negative',
+                    emoji: '🤨'
+                },
+                neutral: {
+                    value: 50,
+                    type: 'Neutral',
+                    emoji: '🤐'
+                }
+            }
+        },
+        methods: {
+            evaluate(){
+                this.visible = true
+                this.state = false
             }
         }
-    },
-    methods: {
-        evaluate(){
-            this.visible = true
-            this.state = false
-        }
     }
-}
 </script>
+
+
 <style >
  
-  img{
+img{
       border-radius: 20%;
       margin: 20px;
-  }
+   }
   .summary{
       padding-right: 30px;
       text-align: justify;
@@ -96,11 +101,11 @@ export default {
   }
   .separator {
     padding: 20px;
-}
-.card-margin{
+  }
+  .card-margin{
     margin-top: 10px;
     padding: 10px;
     margin-bottom: 10px;
-}
+  }
+  
 </style>
->
