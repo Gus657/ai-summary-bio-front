@@ -59,10 +59,10 @@ const  axios = require('axios');
                 user:'',
                 visible: false,
                 people: {
-                    name:'Gus',
+                    name:'',
                     picture: '',
-                    headline: 'Web Developer',
-                    summary: 'Soy una persona apasionada por aprender, desde 2016 me dedico al diseño gráfico y digital y desde 2017 al desarrollo de software, gracias a esto pude encontrar una gran cantidad de oportunidades para seguir aprendiendo, nuevas oportunidades para mejorar y ampliar mis conocimientos, me he dado cuenta que al colaborar con otros fortalezco mis conocimientos y habilidades, además de hacer nuevas amistades.'
+                    headline: '',
+                    summary: ''
                 }
             }
         },
@@ -73,7 +73,12 @@ const  axios = require('axios');
                 user:this.user
                 })
                 .then(response => {
-                    console.log(response.data);
+                    this.people.name = response.data.name;
+                    this.people.picture = response.data.picture;
+                    this.people.headline = response.data.headline;
+                    this.people.summary = response.data.bio;
+                     this.p.name 
+                     this.visible = true
                 })
                 .catch(err => {
                     alert("Error")
