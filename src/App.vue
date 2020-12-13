@@ -1,5 +1,24 @@
 <template>
   <div id="app">
+    <md-card class="card  md-elevation-24 margin-top">
+            <div class="top-left">
+                <md-button
+                  @click="focusHome()"
+                  class=" md-raised font-color " 
+                  v-bind:class="[homeButton ? styleFocus : styleUnfocus]"
+                >
+                  Home
+                </md-button>
+
+                <md-button 
+                  @click="focusExample()" 
+                  class=" md-raised font-color " 
+                  v-bind:class="[exampleButton ? styleFocus : styleUnfocus]" 
+                >
+                  Example
+                </md-button>
+            </div>
+    </md-card>
     <SearchCard></SearchCard>
   </div>
 </template>
@@ -11,6 +30,25 @@ export default {
   name: 'App',
   components: {
     SearchCard
+  },
+  data(){
+    return {
+      homeButton: true,
+      exampleButton: false,
+      styleFocus: 'button-color-unfocus',
+      styleUnfocus: 'button-color'
+    }
+    
+  },
+  methods: {
+    focusHome(){
+      this.homeButton = true;
+      this.exampleButton = false;
+    },
+    focusExample(){
+      this.homeButton = false;
+      this.exampleButton = true;
+    }
   }
 
 }
@@ -23,7 +61,6 @@ export default {
   margin-left: 30px;
   margin-right: 30px;
 }
-
   .card{
     background-color: rgba(67, 67, 67, 0.755);
     color: white;
@@ -31,8 +68,11 @@ export default {
   .font-color{
     color: white;
   }
-  .button-color{
-    background-color: rgb(53, 202, 3);
+ .button-color{
+     background-color: rgb(53, 202, 3);
+  }
+   .button-color-unfocus{
+     background-color: rgb(79, 104, 71);
   }
 
     body{

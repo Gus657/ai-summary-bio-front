@@ -37,14 +37,14 @@
          <span class="md-subhead">  <i>Remember, this is only an idea to help you, isn't a requirement for you.</i></span>  
     </md-card>
     
-
     </div>
 </template>
 <script>
 import EvaluationCard from "./Evaluation"
 
 export default {
-    name: 'BioData',data() {
+    name: 'BioData',
+    data() {
         return {
             visible: false,
             buttonVisible: true,
