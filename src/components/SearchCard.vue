@@ -73,15 +73,20 @@ const  axios = require('axios');
                 user:this.user
                 })
                 .then(response => {
+
                     console.log(response.data);
+                    this.people.name = response.data.name;
+                    this.people.picture = response.data.picture;
+                    this.people.headline = response.data.headline;
+                    this.people.summary = response.data.bio;
+                     this.visible = true
                 })
                 .catch(err => {
-                    alert("Error")
+                    alert("Error getting Data 😯")
                 })
                     
             },
             searchUser(){
-                this.p.name 
                 this.visible = true
             },
             clearData(){
