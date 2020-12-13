@@ -73,11 +73,11 @@ const  axios = require('axios');
             searchUser(){
                 if (this.user!=''){
                 const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data';
-                axios.get(URL, {
+                axios.post(URL, {
                 user:this.user
                 })
                 .then(response => {
-                    console.log(response.data);
+                    
                     this.people.name = response.data.name;
                     this.people.picture = response.data.picture;
                     this.people.headline = response.data.headline;
