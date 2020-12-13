@@ -1,6 +1,8 @@
 <template>
     <div>
+        <!-- Main container for bios data show component -->
      <md-card class="card md-elevation-24">
+         <!-- General layout for child containers -->
         <div class="md-layout md-gutter">
                  <div class="md-title md-layout-item card-margin">
                     <img src="https://starrgate.s3.amazonaws.com/CACHE/images/users/8721db66f9b1fa11e02d2ad54a3f92ebf64d9fa1/profile_Dc20xif/d5df330d3da509377d71422f688d2c69.jpg" alt="Photo">
@@ -20,6 +22,7 @@
                          Evaluate
                 </div>
                 <br>
+                <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
                      <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">English</md-button>
                      <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
                  </md-card-header>
@@ -27,12 +30,15 @@
      </div>
 
    </md-card>
+
+   <!-- Showin de results of evaluation in child components -->
     <div class="md-layout md-gutter" v-show="!state">
-     <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
+    <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="negative" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="neutral" class="md-layout-item"></EvaluationCard>
     </div>
     
+    <!-- Information leyend -->
     <md-card class="card card-margin">
          <span class="md-subhead">  <i>Remember, this is only an idea to help you, isn't a requirement for you.</i></span>  
     </md-card>
@@ -44,6 +50,10 @@ import EvaluationCard from "./Evaluation"
 
 export default {
     name: 'BioData',
+    props: ['peopleData', 'state'],
+    components: {
+        EvaluationCard
+    },
     data() {
         return {
             visible: false,
@@ -65,21 +75,12 @@ export default {
             }
         }
     },
-    props: ['peopleData', 'state'],
-    components: {
-        EvaluationCard
-    },
     methods: {
         evaluate(){
             this.visible = true
             this.state = false
         }
     }
-
-    
-    
-    
-    
 }
 </script>
 <style >

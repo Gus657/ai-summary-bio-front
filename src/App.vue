@@ -1,15 +1,18 @@
 <template>
   <div id="app">
+    <!-- General Tab Menu -->
     <md-card class="card  md-elevation-24 margin-top">
+      <!-- General container for tab menu buttons-->
             <div class="top-left">
+              <!-- Home Button -->
                 <md-button
-                  @click="focusHome()"
+                  @click="focusHome()" 
                   class=" md-raised font-color " 
                   v-bind:class="[homeButton ? styleFocus : styleUnfocus]"
                 >
                   Home
                 </md-button>
-
+        <!-- Example Button -->
                 <md-button 
                   @click="focusExample()" 
                   class=" md-raised font-color " 
@@ -19,24 +22,31 @@
                 </md-button>
             </div>
     </md-card>
-    <SearchCard></SearchCard>
+    <!-- Search user card, this will display the bio data and evaluation options when home tab is selected -->
+    <SearchCard v-show="homeButton"></SearchCard>
+    <!-- Example Card options, this will display an AI fucntionality example whe the example tab is selected-->
+    <Example v-show="exampleButton"></Example>
   </div>
 </template>
 
 <script>
 
 import SearchCard from "./components/SearchCard"
+import Example from "./components/Example"
+
 export default {
   name: 'App',
   components: {
-    SearchCard
+    SearchCard,
+    Example
   },
   data(){
     return {
+      
       homeButton: true,
       exampleButton: false,
-      styleFocus: 'button-color-unfocus',
-      styleUnfocus: 'button-color'
+      styleFocus: 'button-color',
+      styleUnfocus: 'button-color-unfocus'
     }
     
   },

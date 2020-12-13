@@ -1,28 +1,30 @@
 <template>
     <div>
+        <!-- Main contaner for home view -->
         <md-card class="card  md-elevation-24">
          <md-card-header>
              
              <div class="md-title">
-                 AI Evaluation
+                 Summary AI Evaluation
              </div>
 
             
                 <div>
+                    <!-- Input to get the username -->
                     <md-field>
-                        <label>Type your user here!</label>
+                        <label>Type your user name here!</label>
                         <md-input class="md-elevation-1 font-color" v-model="user"></md-input>
                     </md-field>
                 </div>
         
-    
-            <span class="md-subhead separator">  <i>You can see your username next to ' / '  on your torre profile link</i></span>  
+                <!-- Leyend and buttons -->
+            <span class="md-subhead separator">  <i>You can see your user name next to ' / '  on your torre profile link</i></span>  
             <br> <br>
              <md-button @click="searchUser()" class="md-raised font-color button-color">Search</md-button>
             <md-button @click="clearData()" class="md-raised font-color button-color">Clear</md-button> 
          </md-card-header>
            
-
+            <!-- Child Component to show the information about the selected user -->
             <BioData v-show="visible"
                 class="card-margin"
                 :peopleData="people"
