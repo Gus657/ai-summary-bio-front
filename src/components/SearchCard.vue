@@ -17,12 +17,12 @@
             
                     <!-- Leyend and buttons -->
                 <span class="md-subhead separator">  
-                    <i>You can see your user name next to ' / '  on your torre profile link</i>
+                    <i>You can see your user name ({{user}}) next to ' / '  on your torre profile link</i>
                 </span>  
                 <br> 
                 <br>
                 <md-button 
-                    @click="searchUser()" 
+                    @click="wakeUp()" 
                     class="md-raised font-color button-color"
                 > Search </md-button>
                 <md-button 
@@ -46,6 +46,8 @@
 
 <script>
 import BioData from './BioData'
+const  axios = require('axios');
+
 
     export default {
         name: 'SearchCard',
@@ -65,7 +67,21 @@ import BioData from './BioData'
             }
         },
         methods: {
+            wakeUp(){
+                const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data';
+                axios.post(URL, {
+                user:this.user
+                })
+                .then(response => {
+                    console.log(response.data);
+                })
+                .catch(err => {
+                    alert("Error")
+                })
+                    
+            },
             searchUser(){
+                this.p.name 
                 this.visible = true
             },
             clearData(){
