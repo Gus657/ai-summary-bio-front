@@ -8,7 +8,7 @@
             <!-- Text Area for get the text to evaluation example -->
                         <md-field>
                             <label>Type here the text to evaluate</label>
-                            <md-textarea class="md-elevation-1 font-color" v-model="autogrow" md-autogrow></md-textarea>
+                            <md-textarea class="md-elevation-1 font-color" md-autogrow></md-textarea>
                         </md-field>
                     </div>
             <!-- Help leyend -->
