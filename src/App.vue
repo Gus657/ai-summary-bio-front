@@ -25,7 +25,7 @@ export default {
 }
 
   .card{
-    background-color: rgb(67, 67, 67);
+    background-color: rgba(67, 67, 67, 0.755);
     color: white;
   }
   .font-color{
@@ -36,8 +36,8 @@ export default {
   }
 
     body{
-  background: #3CA55C;  /* fallback for old browsers */
-  background: -webkit-linear-gradient(to right, #B5AC49, #3CA55C);  /* Chrome 10-25, Safari 5.1-6 */
-  background: linear-gradient(to right, #B5AC49, #3CA55C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: #8cb549;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right, #8cb549, #3CA55C);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #8cb549, #3CA55C); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
      }
 </style>

@@ -7,7 +7,7 @@
              </div>
 
             
-                <div class="md-title">
+                <div>
                     <md-field>
                         <label>Type your user here!</label>
                         <md-input class="md-elevation-1 font-color" v-model="user"></md-input>
@@ -15,14 +15,15 @@
                 </div>
         
     
-            <span class="md-subhead">  <i>You can see your username next to ' / '  on your torre profile link</i></span>  
-            <br>
+            <span class="md-subhead separator">  <i>You can see your username next to ' / '  on your torre profile link</i></span>  
+            <br> <br>
              <md-button @click="searchUser()" class="md-raised font-color button-color">Search</md-button>
             <md-button @click="clearData()" class="md-raised font-color button-color">Clear</md-button> 
          </md-card-header>
            
 
             <BioData v-show="visible"
+                class="card-margin"
                 :peopleData="people"
             ></BioData>
    </md-card>
@@ -61,5 +62,8 @@ export default {
 }
 </script>
 <style >
+.separator {
+    padding: 20px;
+}
 
 </style>
