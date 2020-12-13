@@ -71,7 +71,7 @@ const  axios = require('axios');
                 this.user = this.user;
             },
             searchUser(){
-                if (user!=''){
+                if (this.user!=''){
                 const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data';
                 axios.post(URL, {
                 user:this.user
