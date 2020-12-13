@@ -5,7 +5,7 @@
          <!-- General layout for child containers -->
         <div class="md-layout md-gutter">
                  <div class="md-title md-layout-item card-margin">
-                    <img src="https://starrgate.s3.amazonaws.com/CACHE/images/users/8721db66f9b1fa11e02d2ad54a3f92ebf64d9fa1/profile_Dc20xif/d5df330d3da509377d71422f688d2c69.jpg" alt="Photo">
+                    <img v-bind:src="[true ? peopleData.picture : '']" alt="Photo">
                      <div class="md-title">
                      {{peopleData.name}}
                     </div>
