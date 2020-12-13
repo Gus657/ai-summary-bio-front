@@ -22,7 +22,7 @@
                 <br> 
                 <br>
                 <md-button 
-                    @click="wakeUp()" 
+                    @click="searchUser()" 
                     class="md-raised font-color button-color"
                 > Search </md-button>
                 <md-button 
@@ -68,12 +68,15 @@ const  axios = require('axios');
         },
         methods: {
             wakeUp(){
+                this.user = this.user;
+            },
+            searchUser(){
+                if (user!=''){
                 const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data';
                 axios.post(URL, {
                 user:this.user
                 })
                 .then(response => {
-
                     console.log(response.data);
                     this.people.name = response.data.name;
                     this.people.picture = response.data.picture;
@@ -84,13 +87,19 @@ const  axios = require('axios');
                 .catch(err => {
                     alert("Error getting Data 😯")
                 })
+                }else{
+                    alert("Please type your user name")
+                }
                     
-            },
-            searchUser(){
-                this.visible = true
             },
             clearData(){
                 this.visible = false
+                this.user = '';
+                this.people.name =  '';
+                this.people.picture =  '';
+                this.people.headline =  '';
+                this.people.summary = '';
+               
             }
         }
         
