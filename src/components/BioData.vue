@@ -16,13 +16,18 @@
                           Summary of Bio
                 </div>
                      <p class="md-subhead separator">  <i>{{peopleData.summary}}</i></p>  
-                     <md-button @click="evaluate()" class="md-raised font-color button-color">Evaluate</md-button>
+                   <div class="md-title">
+                         Evaluate
+                </div>
+                <br>
+                     <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">English</md-button>
+                     <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
                  </md-card-header>
                 </div>
      </div>
 
    </md-card>
-    <div class="md-layout md-gutter" v-show="visible">
+    <div class="md-layout md-gutter" v-show="!state">
      <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="negative" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="neutral" class="md-layout-item"></EvaluationCard>
@@ -42,6 +47,7 @@ export default {
     name: 'BioData',data() {
         return {
             visible: false,
+            buttonVisible: true,
             positive: {
                 value: 50,
                 type: 'Positive',
@@ -59,13 +65,14 @@ export default {
             }
         }
     },
-    props: ['peopleData'],
+    props: ['peopleData', 'state'],
     components: {
         EvaluationCard
     },
     methods: {
         evaluate(){
             this.visible = true
+            this.state = false
         }
     }
 
@@ -84,6 +91,7 @@ export default {
   .summary{
       padding-right: 30px;
       text-align: justify;
+      min-width: 300px;
   }
   .separator {
     padding: 20px;

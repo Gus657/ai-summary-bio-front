@@ -3,7 +3,7 @@
         <md-card class="card  md-elevation-24">
          <md-card-header>
              <div class="md-title">
-                 Summary of Bio Evaluation
+                 AI Evaluation
              </div>
 
             
@@ -25,6 +25,7 @@
             <BioData v-show="visible"
                 class="card-margin"
                 :peopleData="people"
+                :state="visible"
             ></BioData>
    </md-card>
 
