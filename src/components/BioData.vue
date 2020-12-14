@@ -23,8 +23,8 @@
                 </div>
                 <br>
                 <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
-                     <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">English</md-button>
-                     <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="state">English</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
                  </md-card-header>
                 </div>
      </div>
@@ -72,16 +72,33 @@ import EvaluationCard from "./Evaluation"
                     emoji: '🤨'
                 },
                 neutral: {
-                    value: 50,
+                    value: 20,
                     type: 'Neutral',
                     emoji: '🤐'
                 }
             }
         },
         methods: {
-            evaluate(){
-                this.visible = true
-                this.state = false
+            evaluate(text ,language){
+                if (text!=''){
+                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';
+                axios.post(URL, {
+                summary: text,
+                lang : language
+                })
+                .then(response => {
+                    this.positive.value = response.data.positive;
+                    this.negative.value = response.data.negative;
+                    this.neutral.value = response.data.neutral;
+                    this.visible = true
+                    this.state = false
+                })
+                .catch(err => {
+                    alert("Error on data 😢")
+                })
+                }else{
+                    alert("Please type any text to analyse")
+                }
             }
         }
     }
