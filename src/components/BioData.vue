@@ -23,8 +23,8 @@
                 </div>
                 <br>
                 <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
-                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="!visible">English</md-button>
-                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="!visible">Spanish</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="visible">English</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="visible">Spanish</md-button>
                  </md-card-header>
                 </div>
      </div>
