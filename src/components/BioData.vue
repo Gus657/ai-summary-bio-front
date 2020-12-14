@@ -50,6 +50,7 @@
 
 <script>
 import EvaluationCard from "./Evaluation"
+const  axios = require('axios');
 
     export default {
         name: 'BioData',
