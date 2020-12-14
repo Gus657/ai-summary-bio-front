@@ -50,29 +50,28 @@
 
 <script>
 import EvaluationCard from "./Evaluation"
-const  axios = require('axios');
+const  axios = require('axios'); //library used for making the requests
 
     export default {
-        name: 'BioData',
-        props: ['peopleData', 'state'],
+        props: ['peopleData', 'state'], // props used to know the general state of the application
         components: {
-            EvaluationCard
+            EvaluationCard //Child component for result display
         },
         data() {
             return {
-                visible: false,
-                buttonVisible: true,
-                positive: {
+                visible: false, //Used to control de state of aplication 
+                buttonVisible: true, // Used to hide button on evaluation
+                positive: { //Object to describe the positive state
                     value: 50,
                     type: 'Positive',
                     emoji: '😁'
                 },
-                negative: {
+                negative: {// objecto to the negative state
                     value: 30,
                     type: 'Negative',
                     emoji: '🤨'
                 },
-                neutral: {
+                neutral: { //object to describe neutral state
                     value: 20,
                     type: 'Neutral',
                     emoji: '🤐'
@@ -80,14 +79,16 @@ const  axios = require('axios');
             }
         },
         methods: {
-            evaluate(text ,language){
-                if (text!=''){
-                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';
-                axios.post(URL, {
+            //this method call the AI API
+            evaluate(text ,language){ // use text to define the input to analyze and use lang to know which language it should use
+                if (text!=''){ //Validates if input text is not empty
+                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';// Enpoint of AI
+                axios.post(URL, { //Object sended in the request
                 summary: text,
                 lang : language
                 })
                 .then(response => {
+                    //store the response and adjust percentages
                     this.positive.value = response.data.positive * 100;
                     this.negative.value = response.data.negative * 100;
                     this.neutral.value = response.data.neutral * 100;
@@ -95,9 +96,11 @@ const  axios = require('axios');
                     this.state = false
                 })
                 .catch(err => {
+                    //show an error message if the response is not valid
                     alert("Error on data 😢")
                 })
                 }else{
+                    //validation for empty text
                     alert("Please type any text to analyse")
                 }
             }

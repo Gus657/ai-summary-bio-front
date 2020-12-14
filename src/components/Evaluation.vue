@@ -23,7 +23,7 @@
 <script>
 export default {
     name: 'EvaluationCard',
-    props: ['results'] 
+    props: ['results'] // Prop used to get the analyze results
 }
 </script>
 

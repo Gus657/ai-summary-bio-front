@@ -55,11 +55,11 @@ import Example from "./components/Example"
       
     },
     methods: {
-      focusHome(){
+      focusHome(){ //set style focus on home button
         this.homeButton = true;
         this.exampleButton = false;
       },
-      focusExample(){
+      focusExample(){ //set style focus on example button
         this.homeButton = false;
         this.exampleButton = true;
       }
