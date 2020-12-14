@@ -46,19 +46,19 @@
 
 <script>
 import BioData from './BioData'
-const  axios = require('axios');
+const  axios = require('axios'); // Library used to meka the api requests
 
 
     export default {
         name: 'SearchCard',
         components: {
-            BioData
+            BioData //Child component for display user information
         },
         data(){
             return {
-                user:'',
-                visible: false,
-                people: {
+                user:'', //User name typed
+                visible: false, // Application state, show the bio information and results
+                people: { //Object to store the person information
                     name:'',
                     picture: '',
                     headline: '',
@@ -67,31 +67,30 @@ const  axios = require('axios');
             }
         },
         methods: {
-            wakeUp(){
-                this.user = this.user;
-            },
             searchUser(){
-                if (this.user!=''){
-                const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data';
+                if (this.user!=''){ //Validates user field is not empty
+                const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data'; // Integration with backend
                 axios.post(URL, {
-                user:this.user
+                user:this.user //object sended
                 })
                 .then(response => {
+                    //Storage the response
                     this.people.name = response.data.name;
                     this.people.picture = response.data.picture;
                     this.people.headline = response.data.headline;
                     this.people.summary = response.data.bio;
-                     this.visible = true
+                     this.visible = true // changin app state
                 })
-                .catch(err => {
+                .catch(err => { // Showing error
                     alert("Unknow user name 😢")
                 })
-                }else{
+                }else{ // Showing validation
                     alert("Please type your user name")
                 }
                     
             },
             clearData(){
+                //unstorage data from user 
                 this.visible = false
                 this.user = '';
                 this.people.name =  '';

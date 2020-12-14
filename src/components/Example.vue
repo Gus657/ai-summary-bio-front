@@ -34,29 +34,28 @@
 </template>
 <script>
 import EvaluationCard from "./Evaluation"
-const  axios = require('axios');
+const  axios = require('axios'); //library used for making the request to backend
 
 export default {
     name: 'Example',
     components: {
-     EvaluationCard
+     EvaluationCard //Child component used for display results
     },
     data(){
         return {
-            user:'',
-            textForExample:'',
-            state: false,
-            positive: {
+            textForExample:'', //Storage the text to analyze
+            state: false, // Used to determine the state of aplication components
+            positive: { //Object to describe positive results
                 value: 50,
                 type: 'Positive',
                 emoji: '😁'
             },
-            negative: {
+            negative: {//Object to describe negative results
                  value: 30,
                 type: 'Negative',
                 emoji: '🤨'
             },
-            neutral: {
+            neutral: { // Object to describe neutral results
                  value: 50,
                 type: 'Neutral',
                 emoji: '🤐'
@@ -64,34 +63,39 @@ export default {
         }
     },
     methods: {
-        evaluate(text ,language){
-                if (text!=''){
-                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';
+        evaluate(text ,language){ // text represents data to analyze and lang is language of the text
+                if (text!=''){//Validates if input text is valid
+                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';// Enpoint of AI 
                 axios.post(URL, {
+                    //Object sended to endpoint
                 summary: text,
                 lang : language
                 })
                 .then(response => {
+                    //storage the results
                     this.positive.value = response.data.positive * 100;
                     this.negative.value = response.data.negative * 100;
                     this.neutral.value = response.data.neutral * 100;
                     this.state = true
                 })
                 .catch(err => {
+                    //Show the error message if the response is not valid
                     alert("Error on data 😢")
                 })
                 }else{
+                    //validation for empty text
                     alert("Please type any text to analyse")
                 }
             },
         clearData(){
-            this.state = false
+            //Set empty text and initial state
+            this.state = false,
+            this.textForExample = ''
         }
     }
     
 }
 </script>
-
 
 <style >
 
