@@ -37,6 +37,7 @@
 
 import SearchCard from "./components/SearchCard"
 import Example from "./components/Example"
+const  axios = require('axios'); //library used for making the requests
 
   export default {
     name: 'App',
@@ -63,6 +64,10 @@ import Example from "./components/Example"
         this.homeButton = false;
         this.exampleButton = true;
       }
+    },
+    beforeMount(){
+     const URL = 'https://ai-summary-api.herokuapp.com/api/wakeup';// Enpoint to get ready API
+                axios.post(URL);
     }
 
   }

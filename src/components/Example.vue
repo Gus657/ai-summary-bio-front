@@ -73,9 +73,9 @@ export default {
                 })
                 .then(response => {
                     //storage the results
-                    this.positive.value = response.data.positive * 100;
-                    this.negative.value = response.data.negative * 100;
-                    this.neutral.value = response.data.neutral * 100;
+                    this.positive.value = (response.data.positive * 100).toFixed(2);
+                    this.negative.value = (response.data.negative * 100).toFixed(2);
+                    this.neutral.value = (response.data.neutral * 100).toFixed(2);
                     this.state = true
                 })
                 .catch(err => {
