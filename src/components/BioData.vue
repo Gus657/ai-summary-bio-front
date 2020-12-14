@@ -88,9 +88,9 @@ const  axios = require('axios');
                 lang : language
                 })
                 .then(response => {
-                    this.positive.value = response.data.positive;
-                    this.negative.value = response.data.negative;
-                    this.neutral.value = response.data.neutral;
+                    this.positive.value = response.data.positive * 100;
+                    this.negative.value = response.data.negative * 100;
+                    this.neutral.value = response.data.neutral * 100;
                     this.visible = true
                     this.state = false
                 })
