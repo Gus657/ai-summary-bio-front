@@ -85,7 +85,8 @@ export default {
                 }
             },
         clearData(){
-            this.state = false
+            this.state = false,
+            this.textForExample = ''
         }
     }
     
