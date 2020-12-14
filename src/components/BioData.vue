@@ -32,7 +32,7 @@
    </md-card>
 
    <!-- Showin de results of evaluation in child components -->
-    <div class="md-layout md-gutter" v-show="visible">
+    <div class="md-layout md-gutter" v-show="!visible">
     <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="negative" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="neutral" class="md-layout-item"></EvaluationCard>
