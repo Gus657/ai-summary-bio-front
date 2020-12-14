@@ -59,8 +59,7 @@ const  axios = require('axios'); //library used for making the requests
         },
         data() {
             return {
-                visible: false, //Used to control de state of aplication 
-                buttonVisible: true, // Used to hide button on evaluation
+                visible: this.state, //Used to control de state of aplication 
                 positive: { //Object to describe the positive state
                     value: 50,
                     type: 'Positive',
@@ -80,7 +79,7 @@ const  axios = require('axios'); //library used for making the requests
         },
         methods: {
             //this method call the AI API
-            evaluate(text ,language){ // use text to define the input to analyze and use lang to know which language it should use
+            evaluate(text ,language, appState){ // use text to define the input to analyze and use lang to know which language it should use
                 if (text!=''){ //Validates if input text is not empty
                 const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';// Enpoint of AI
                 axios.post(URL, { //Object sended in the request
@@ -92,7 +91,8 @@ const  axios = require('axios'); //library used for making the requests
                     this.positive.value = (response.data.positive * 100).toFixed(2);
                     this.negative.value = (response.data.negative * 100).toFixed(2);
                     this.neutral.value = (response.data.neutral * 100).toFixed(2);
-                    this.visible = true
+                    this.visible = false
+                    
                 })
                 .catch(err => {
                     //show an error message if the response is not valid
