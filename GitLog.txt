@@ -1,0 +1,314 @@
+commit 0b46c73cb86e666af20c8b6a6ed03bcef7aa710e
+Merge: 436e3ab 5893fd3
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:36:16 2020 -0600
+
+    Merge pull request #16 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit 5893fd30e5d1cc8bdef0f640ff75e68647bbd21c
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:34:34 2020 -0600
+
+    Adjustments on state
+
+commit 436e3ab5597117fc3a33ab2a03fd97a884a92cb4
+Merge: f6ca595 da10240
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:26:32 2020 -0600
+
+    Merge pull request #15 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit da10240a82112b3cd7c30ddeda3da9610093e605
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:24:51 2020 -0600
+
+    Adjustments on state
+
+commit f6ca595fbaa3c9e16251716d8c4160d51db855ff
+Merge: 09c5a47 eb129c2
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:21:25 2020 -0600
+
+    Merge pull request #14 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit eb129c222366c138a1ec5c5783d6de3c5b5a1cdb
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 21:19:19 2020 -0600
+
+    Adjustments on state
+
+commit 09c5a47d92240784e1b6e5a355f74273943e86a3
+Merge: 0190514 9eae76b
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:51:40 2020 -0600
+
+    Merge pull request #13 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit 9eae76b0a6c465ca7579c83604944f6b39e83476
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:50:14 2020 -0600
+
+    Adjustments on state
+
+commit 019051495e5aa36c3c0353b8f0306f3b683d392a
+Merge: 64a9f92 9cb7825
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:33:36 2020 -0600
+
+    Merge pull request #12 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit 9cb782570ac5b9dcbe308d33fd7d23a37ac07eab
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:32:06 2020 -0600
+
+    Adjustments on state
+
+commit 64a9f92c2f61d75d482201c6ee9ba12e3eb00b02
+Merge: 0384edc a568e80
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:28:14 2020 -0600
+
+    Merge pull request #11 from Gus657/Example-Integration
+    
+    Adjustments on state
+
+commit a568e8007bcc87d92ee8cde27dce136bad95e592
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 20:26:19 2020 -0600
+
+    Adjustments on state
+
+commit 0384edc133768a91329c920c2aeef2db593c3593
+Merge: 3793d23 c023cbe
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 19:32:59 2020 -0600
+
+    Merge pull request #10 from Gus657/Example-Integration
+    
+    Example integration
+
+commit c023cbe4dde6392f04b7f19835bb57bbf4f87e9e
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 19:28:03 2020 -0600
+
+    Review and doc
+
+commit d1339ea92e9122958f6035925e40afdc5e30d3a6
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:57:08 2020 -0600
+
+    Cleaning example data
+
+commit 3793d2326eab100393835e755338011d01cb0688
+Merge: 1b3284b 4d355b7
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:40:02 2020 -0600
+
+    Merge pull request #9 from Gus657/Example-Integration
+    
+    AI Example
+
+commit 4d355b76e4826f455f3d49887c4ddfc72be53060
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:38:30 2020 -0600
+
+    AI Example
+
+commit 1b3284b8e02936fc47f8f180748acaba95adf4cb
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:21:19 2020 -0600
+
+    Final Adjustments on Percentages
+
+commit f4b007a3366933846849c106bc5c874c0043caec
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:08:59 2020 -0600
+
+    Adding Axios
+
+commit 0e8f705a5a30dabe721c9060e2812b81d61e4069
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 18:01:10 2020 -0600
+
+    Setting up for AI API
+
+commit 49b57ff0c28840a88f314e034d0a4fc1df1384b2
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:55:41 2020 -0600
+
+    Pos Endpoit Reviewed
+
+commit f39052bf66eb9ef7ef7dca5088ddf55944b295d0
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:44:24 2020 -0600
+
+    Get Endpoit Reviewed
+
+commit 173687fe68d400eb31a1a38f7c7318b66c380473
+Merge: 95e4416 b1577ae
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:28:53 2020 -0600
+
+    Merge pull request #8 from Gus657/API-integration
+    
+    Bio Props
+
+commit b1577ae5aa09b05135f01f9587740618a34829e7
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:26:57 2020 -0600
+
+    Bio Props
+
+commit 95e44164b2ee75d449bc15b4ae405a8e7d6bb19e
+Merge: 0abadc4 555ddcd
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:24:43 2020 -0600
+
+    Merge pull request #7 from Gus657/API-integration
+    
+    Bio Props
+
+commit 555ddcd14c752c97f558de6a4e3e3935c31c496a
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:21:14 2020 -0600
+
+    Bio Props
+
+commit 0abadc42643351d7e04ca4cfbdc589b6eace33ec
+Merge: 4533257 fc9281c
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:10:49 2020 -0600
+
+    Merge pull request #6 from Gus657/API-integration
+    
+    Api integration
+
+commit fc9281ca6e7be9dd5e0b396f330c78f67e0c3b94
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:10:03 2020 -0600
+
+    Bio Props
+
+commit 6ce85f21b7f6cf5b725b6163b48c7ce541924559
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:04:50 2020 -0600
+
+    Bio Props
+
+commit 45332575d961f6f8547eecda62b81f9b4adfe630
+Merge: 5cc2f8b cdb1145
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:01:39 2020 -0600
+
+    Merge pull request #4 from Gus657/API-integration
+    
+    Bio Props
+
+commit cdb11452db8a6f799b014318bcb499545f08b25a
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 16:00:35 2020 -0600
+
+    Bio Props
+
+commit 5cc2f8bd990ee9331fa162f6b430df9a3493ad9e
+Merge: 26f5779 51ce028
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 15:46:53 2020 -0600
+
+    Merge pull request #3 from Gus657/API-integration
+    
+    Bio Data
+
+commit 51ce02846adc741c0bc069f693dab09a5095f5a9
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 15:34:02 2020 -0600
+
+    Bio Data
+
+commit 26f577920c4cb8adf9ce1484674dc5ff1982f6df
+Merge: c6dd670 dd17232
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 11:32:38 2020 -0600
+
+    Merge pull request #2 from Gus657/Example
+    
+    Example UI Finished
+
+commit dd17232937795db2eacdb02008163f0587ee8d67
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 11:27:57 2020 -0600
+
+    Ajustments and general code documentation
+
+commit fe249c70cc3c43144293c080823fe4e21c77321c
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 11:12:11 2020 -0600
+
+    Example UI finished
+
+commit c6dd6702c4e6fd2b0ffaaea7c680df35402d85d0
+Merge: 3c7c401 4f16351
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 02:08:37 2020 -0600
+
+    Merge pull request #1 from Gus657/Home
+    
+    Home Version 1
+
+commit 4f16351dd5ca12f42f054920466acd4ab67c1f57
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Sun Dec 13 01:59:11 2020 -0600
+
+    Deleting File uploaded by error
+
+commit 83bc3d0702931d9ec7da7c454da47a15a38041dd
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sun Dec 13 01:57:39 2020 -0600
+
+     Adding Simple Tab options (Menu)
+
+commit d8abfe604e531e4385d36080658d6057b514a65b
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sat Dec 12 20:24:11 2020 -0600
+
+    Adjustments on UI
+
+commit 2dcc99e358322886c8ff933adb587beb3a18de79
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sat Dec 12 19:45:35 2020 -0600
+
+    Results Child Component UI
+
+commit 603b72de2890e95774887ce8d77fd2b7bcf54664
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sat Dec 12 17:53:43 2020 -0600
+
+    Bio Data Child Component - Basic Structure
+
+commit 74f3252d7d12159e3e686ec42d7e95394f792bf2
+Author: Gus657 <ggusperezg@gmail.com>
+Date:   Sat Dec 12 16:23:51 2020 -0600
+
+    Base Components
+
+commit 3c7c4018b808e5c81d9ddb07a7ef3100dbc5b06a
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Fri Dec 11 20:24:44 2020 -0600
+
+    Initial Documents
+
+commit b68b2f9b102fbea54ddae7542d9fcb8e5eee8d81
+Author: Gustavo Perez <ggusperezg@gmail.com>
+Date:   Fri Dec 11 20:10:31 2020 -0600
+
+    Initial commit
