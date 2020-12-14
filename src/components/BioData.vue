@@ -23,8 +23,8 @@
                 </div>
                 <br>
                 <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
-                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="!visible">English</md-button>
-                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="!visible">Spanish</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="state">English</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
                  </md-card-header>
                 </div>
      </div>
@@ -32,7 +32,7 @@
    </md-card>
 
    <!-- Showin de results of evaluation in child components -->
-    <div class="md-layout md-gutter" v-show="visible">
+    <div class="md-layout md-gutter" v-show="!state">
     <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="negative" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="neutral" class="md-layout-item"></EvaluationCard>
@@ -91,8 +91,8 @@ const  axios = require('axios'); //library used for making the requests
                     this.positive.value = (response.data.positive * 100).toFixed(2);
                     this.negative.value = (response.data.negative * 100).toFixed(2);
                     this.neutral.value = (response.data.neutral * 100).toFixed(2);
-                    this.visible = true
-                    
+                   this.visible = true
+                    this.state = false
                 })
                 .catch(err => {
                     //show an error message if the response is not valid
