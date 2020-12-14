@@ -8,7 +8,7 @@
             <!-- Text Area for get the text to evaluation example -->
                         <md-field>
                             <label>Type here the text to evaluate</label>
-                            <md-textarea class="md-elevation-1 font-color" md-autogrow></md-textarea>
+                            <md-textarea class="md-elevation-1 font-color" v-model="textForExample" md-autogrow></md-textarea>
                         </md-field>
                     </div>
             <!-- Help leyend -->
@@ -18,8 +18,8 @@
                 <br> 
                 <br>
             <!-- Main container for the evaluation results card component -->
-                <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="!state">English</md-button>
-                <md-button @click="evaluate()" class="md-raised font-color button-color" v-show="!state">Spanish</md-button>
+                <md-button @click="evaluate(textForExample, 'en')" class="md-raised font-color button-color" v-show="!state">English</md-button>
+                <md-button @click="evaluate(textForExample, 'es')" class="md-raised font-color button-color" v-show="!state">Spanish</md-button>
                 <md-button @click="clearData()" class="md-raised font-color button-color" v-show="state">Clear</md-button> 
             </md-card-header>
         </md-card>
@@ -34,6 +34,7 @@
 </template>
 <script>
 import EvaluationCard from "./Evaluation"
+const  axios = require('axios');
 
 export default {
     name: 'Example',
@@ -43,8 +44,8 @@ export default {
     data(){
         return {
             user:'',
-            visible: false,
-            state: true,
+            textForExample:'',
+            state: false,
             positive: {
                 value: 50,
                 type: 'Positive',
@@ -63,9 +64,26 @@ export default {
         }
     },
     methods: {
-        evaluate(){
-            this.state = true
-        },
+        evaluate(text ,language){
+                if (text!=''){
+                const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';
+                axios.post(URL, {
+                summary: text,
+                lang : language
+                })
+                .then(response => {
+                    this.positive.value = response.data.positive * 100;
+                    this.negative.value = response.data.negative * 100;
+                    this.neutral.value = response.data.neutral * 100;
+                    this.state = true
+                })
+                .catch(err => {
+                    alert("Error on data 😢")
+                })
+                }else{
+                    alert("Please type any text to analyse")
+                }
+            },
         clearData(){
             this.state = false
         }
