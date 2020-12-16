@@ -69,8 +69,8 @@ const  axios = require('axios'); // Library used to meka the api requests
         methods: {
             searchUser(){
                 if (this.user!=''){ //Validates user field is not empty
-                const URL = 'https://ai-summary-api.herokuapp.com/api/bio-data'; // Integration with backend
-                axios.post(URL, {
+                const URL = `https://ai-summary-api.herokuapp.com/api/bio-data/${this.user}`; // Integration with backend
+                axios.get(URL, {
                 user:this.user //object sended
                 })
                 .then(response => {
