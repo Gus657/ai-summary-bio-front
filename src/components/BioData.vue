@@ -25,6 +25,7 @@
                 <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
                      <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="state">English</md-button>
                      <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="!state">Save Results</md-button>
                  </md-card-header>
                 </div>
      </div>
@@ -74,12 +75,14 @@ const  axios = require('axios'); //library used for making the requests
                     value: 20,
                     type: 'Neutral',
                     emoji: '🤐'
-                }
+                },
+                userResults: []
             }
         },
         methods: {
             //this method call the AI API
             evaluate(text ,language, appState){ // use text to define the input to analyze and use lang to know which language it should use
+                
                 if (text!=''){ //Validates if input text is not empty
                 const URL = 'https://ai-summary-api.herokuapp.com/api/evaluate';// Enpoint of AI
                 axios.post(URL, { //Object sended in the request
@@ -97,6 +100,26 @@ const  axios = require('axios'); //library used for making the requests
                 .catch(err => {
                     //show an error message if the response is not valid
                     alert("Error on data 😢")
+                })
+                }else{
+                    //validation for empty text
+                    alert("Please type any text to analyse")
+                }
+            },
+            saveResults(user, data, date) {
+                if (user != ''){ //Validates if input text is not empty
+                const URL = 'https://ai-summary-api.herokuapp.com/api/results/save';// Enpoint of AI
+                axios.post(URL, { //Object sended in the request
+                summary: text,
+                lang : language
+                })
+                .then(response => {
+                    //store the response and adjust percentages
+                    results.push(response);
+                })
+                .catch(err => {
+                    //show an error message if the response is not valid
+                    alert("Error on data 😢");
                 })
                 }else{
                     //validation for empty text
