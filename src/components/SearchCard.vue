@@ -35,7 +35,8 @@
             <BioData v-show="visible"
                 class="card-margin"
                 :peopleData="people"
-                :state="visible"
+                :state=1
+                :user="user"
             ></BioData>
     </md-card>
 
@@ -62,7 +63,8 @@ const  axios = require('axios'); // Library used to meka the api requests
                     name:'',
                     picture: '',
                     headline: '',
-                    summary: ''
+                    summary: '',
+                   userResults: []
                 }
             }
         },
@@ -87,6 +89,18 @@ const  axios = require('axios'); // Library used to meka the api requests
                 }else{ // Showing validation
                     alert("Please type your user name")
                 }
+
+                //Getting List of Saved Results
+                const URL2 = `https://ai-summary-api.herokuapp.com/api/results/${this.user}`;// Enpoint of AI
+                    axios.get(URL2)
+                    .then(response => {
+                        //store the response
+                            this.people.userResults = response.data;
+                    })
+                    .catch(err => {
+                        //show an error message if the response is not valid
+                        alert("Error on data 😢");
+                    })
                     
             },
             clearData(){
@@ -97,6 +111,7 @@ const  axios = require('axios'); // Library used to meka the api requests
                 this.people.picture =  '';
                 this.people.headline =  '';
                 this.people.summary = '';
+                this.people.userResults = [];
                
             }
         }
