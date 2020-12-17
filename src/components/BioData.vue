@@ -23,9 +23,9 @@
                 </div>
                 <br>
                 <!-- Evaluation buttons, this buttons will disapear when one of them will pressed -->
-                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="state">English</md-button>
-                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="state">Spanish</md-button>
-                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="!state">Save Results</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'en')" class="md-raised font-color button-color" v-show="state==1">English</md-button>
+                     <md-button @click="evaluate(peopleData.summary, 'es')" class="md-raised font-color button-color" v-show="state==1">Spanish</md-button>
+                     <md-button @click="saveResults()" class="md-raised font-color button-color" v-show="state==2">Save Results</md-button>
                  </md-card-header>
                 </div>
      </div>
@@ -33,11 +33,25 @@
    </md-card>
 
    <!-- Showin de results of evaluation in child components -->
-    <div class="md-layout md-gutter" v-show="!state">
+    <div class="md-layout md-gutter" v-show="state==2 || state==3">
     <EvaluationCard :results="positive" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="negative" class="md-layout-item"></EvaluationCard>
     <EvaluationCard :results="neutral" class="md-layout-item"></EvaluationCard>
     </div>
+    
+    <div class="card md-elevation-24 card-margin md-title" v-show="state==2 || state==3" >
+    Saved Results: {{peopleData.userResults.length}}
+    </div>
+
+    <div class="md-layout md-gutter" v-show="state==2 || state==3" >
+        <div v-for="item in peopleData.userResults" v-bind:key="item" class="md-layout-item">
+            <ResultCard v-show="state==3" :results="item" class=" cardSize" ></ResultCard>
+             <button v-show="state==3" class="font-color button-color icon-btn-margin" @click="showSummary(item.summary)">👁️</button>
+             <button v-show="state==3" class="font-color button-color-unfocus icon-btn-margin" @click="showSummary(item.summary)">❌</button>
+        </div>
+    
+    </div>
+    
     
     <!-- Information leyend -->
     <md-card class="card card-margin">
@@ -51,16 +65,18 @@
 
 <script>
 import EvaluationCard from "./Evaluation"
+import ResultCard from "./ResultCard"
 const  axios = require('axios'); //library used for making the requests
 
     export default {
-        props: ['peopleData', 'state'], // props used to know the general state of the application
+        props: ['peopleData', 'state', 'user'], // props used to know the general state of the application
         components: {
-            EvaluationCard //Child component for result display
+            EvaluationCard, //Child component for result display
+            ResultCard
         },
         data() {
             return {
-                visible: this.state, //Used to control de state of aplication 
+                 //Used to control de state of aplication 
                 positive: { //Object to describe the positive state
                     value: 50,
                     type: 'Positive',
@@ -75,8 +91,7 @@ const  axios = require('axios'); //library used for making the requests
                     value: 20,
                     type: 'Neutral',
                     emoji: '🤐'
-                },
-                userResults: []
+                }
             }
         },
         methods: {
@@ -94,8 +109,7 @@ const  axios = require('axios'); //library used for making the requests
                     this.positive.value = (response.data.positive * 100).toFixed(2);
                     this.negative.value = (response.data.negative * 100).toFixed(2);
                     this.neutral.value = (response.data.neutral * 100).toFixed(2);
-                   this.visible = true
-                    this.state = false
+                    this.state = 2
                 })
                 .catch(err => {
                     //show an error message if the response is not valid
@@ -106,26 +120,33 @@ const  axios = require('axios'); //library used for making the requests
                     alert("Please type any text to analyse")
                 }
             },
-            saveResults(user, data, date) {
-                if (user != ''){ //Validates if input text is not empty
-                const URL = 'https://ai-summary-api.herokuapp.com/api/results/save';// Enpoint of AI
-                axios.post(URL, { //Object sended in the request
-                summary: text,
-                lang : language
-                })
-                .then(response => {
-                    //store the response and adjust percentages
-                    results.push(response);
-                })
-                .catch(err => {
-                    //show an error message if the response is not valid
-                    alert("Error on data 😢");
-                })
-                }else{
-                    //validation for empty text
-                    alert("Please type any text to analyse")
-                }
+            saveResults() {
+                 this.state = 3
+
+                 //Getting Data from users
+                    const URL = 'https://ai-summary-api.herokuapp.com/api/results/save';// Enpoint of AI
+                    axios.post(URL, { //Object sended in the request
+                    name: this.user,
+                    positiveValue : this.positive.value,
+                    negativeValue : this.negative.value,
+                    neutralValue : this.neutral.value,
+                    date : 'Front',
+                    summary: this.peopleData.summary,
+                    })
+                    .then(response => {
+                        //store the response and adjust percentages
+                            this.peopleData.userResults.push(response.data);
+                    })
+                    .catch(err => {
+                        //show an error message if the response is not valid
+                        alert("Error on data 😢");
+                    })
+            },
+             showSummary(text){
+                alert(text)
             }
+    
+           
         }
     }
 </script>
@@ -150,5 +171,11 @@ img{
     padding: 10px;
     margin-bottom: 10px;
   }
+  .cardSize{
+      min-width: 200px;
+      width: autogrow; 
+      margin-top: 10px;
+  }
+
   
 </style>

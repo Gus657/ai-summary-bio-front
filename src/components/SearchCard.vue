@@ -35,7 +35,8 @@
             <BioData v-show="visible"
                 class="card-margin"
                 :peopleData="people"
-                :state="visible"
+                :state=1
+                :user="user"
             ></BioData>
     </md-card>
 
@@ -62,7 +63,8 @@ const  axios = require('axios'); // Library used to meka the api requests
                     name:'',
                     picture: '',
                     headline: '',
-                    summary: ''
+                    summary: '',
+                   userResults: []
                 }
             }
         },
@@ -97,6 +99,7 @@ const  axios = require('axios'); // Library used to meka the api requests
                 this.people.picture =  '';
                 this.people.headline =  '';
                 this.people.summary = '';
+                this.people.userResults = [];
                
             }
         }
