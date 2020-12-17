@@ -121,6 +121,7 @@ const  axios = require('axios'); //library used for making the requests
                 }
             },
             saveResults() {
+                const date = new Date();
                  this.state = 3
 
                  //Getting Data from users
@@ -130,7 +131,7 @@ const  axios = require('axios'); //library used for making the requests
                     positiveValue : this.positive.value,
                     negativeValue : this.negative.value,
                     neutralValue : this.neutral.value,
-                    date : 'Front',
+                    date : `${date.getDate()}-${date.getMonth()+1}-${date.getFullYear()} ${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`,
                     summary: this.peopleData.summary,
                     })
                     .then(response => {
