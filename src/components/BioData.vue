@@ -44,10 +44,10 @@
     </div>
 
     <div class="md-layout md-gutter" v-show="state==2 || state==3" >
-        <div v-for="item in peopleData.userResults" v-bind:key="item" class="md-layout-item">
+        <div v-for="(item, i) in peopleData.userResults" v-bind:key="item" class="md-layout-item">
             <ResultCard v-show="state==3" :results="item" class=" cardSize" ></ResultCard>
              <button v-show="state==3" class="font-color button-color icon-btn-margin" @click="showSummary(item.summary)">👁️</button>
-             <button v-show="state==3" class="font-color button-color-unfocus icon-btn-margin" @click="showSummary(item.summary)">❌</button>
+             <button v-show="state==3" class="font-color button-color-unfocus icon-btn-margin" @click="deleteResult(i, item.name, item.date)">❌</button>
         </div>
     
     </div>
@@ -136,6 +136,20 @@ const  axios = require('axios'); //library used for making the requests
                     .then(response => {
                         //store the response and adjust percentages
                             this.peopleData.userResults.push(response.data);
+                    })
+                    .catch(err => {
+                        //show an error message if the response is not valid
+                        alert("Error on data 😢");
+                    })
+            },
+            deleteResult(index, user, date) {
+        
+                 //Getting Data from users
+                    const URL = `https://ai-summary-api.herokuapp.com/api/results/delete/${user}/${date}`;// Enpoint of AI
+                    axios.delete(URL)
+                    .then(response => {
+                        //store the response and adjust percentages
+                            this.peopleData.userResults.splice(index,1);
                     })
                     .catch(err => {
                         //show an error message if the response is not valid
