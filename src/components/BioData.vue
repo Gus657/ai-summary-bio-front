@@ -45,9 +45,9 @@
 
     <div class="md-layout md-gutter" v-show="state==2 || state==3" >
         <div v-for="(item, i) in peopleData.userResults" v-bind:key="item" class="md-layout-item">
-            <ResultCard v-show="state==3" :results="item" class=" cardSize" ></ResultCard>
-             <button v-show="state==3" class="font-color button-color icon-btn-margin" @click="showSummary(item.summary)">👁️</button>
-             <button v-show="state==3" class="font-color button-color-unfocus icon-btn-margin" @click="deleteResult(i, item.name, item.date)">❌</button>
+            <ResultCard  :results="item" class=" cardSize" ></ResultCard>
+             <button  class="font-color button-color icon-btn-margin" @click="showSummary(item.summary)">👁️</button>
+             <button  class="font-color button-color-unfocus icon-btn-margin" @click="deleteResult(i, item.name, item.date)">❌</button>
         </div>
     
     </div>
