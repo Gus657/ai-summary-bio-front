@@ -15,7 +15,7 @@
                <div class="summary md-layout-item">
                  <md-card-header>
                       <div class="md-title">
-                          Summary of Bio
+                          Summary of Bio - Genome Desc.
                 </div>
                      <p class="md-subhead separator">  <i>{{peopleData.summary}}</i></p>  
                    <div class="md-title">
