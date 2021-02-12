@@ -10,7 +10,7 @@ Repository to Frontend development for Fuctionality of AI analysis of Summary bi
 
 _you can see it working on: http://testgusgarcia.netlify.app/_
 
-_The Results are storaged on MongoDB Atlas_
+_The Results are storaged on MongoDB Atla s_
 
 _You can see more about the project, on https://1drv.ms/u/s!AqN2sPCuxQYkaICYe1VMWCbWCVI?e=S8rFkx_
 
