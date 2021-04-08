@@ -9,16 +9,16 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      - name: Build
+      - name: Merge and Build
         run: |
           git fetch
           git config --global user.name "Deploy-bot"
           git checkout main
-          
           git merge test-1 
           npm i
           npm run build
-      - name: Deploy to Netlify
+          
+      - name: Deploy
         uses: nwtgck/actions-netlify@v1.1
         with:
           publish-dir: './dist'
