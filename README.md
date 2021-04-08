@@ -1,4 +1,4 @@
-# ai-summary-bio-front
+# ai-summary-bio-frontss
 Repository to Frontend development for Fuctionality of AI analysis of Summary bio. 
 
 ### New contents - V1.1 17-12-20
