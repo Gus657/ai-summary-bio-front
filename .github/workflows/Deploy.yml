@@ -12,7 +12,7 @@ jobs:
           git fetch
           git config --global user.name "Deploy-bot"
           git checkout ${BASE_BRANCH}
-          git merge 1 --allow-unrelated-histories
+          git merge test-1 --allow-unrelated-histories
           npm i
           npm run build
       - name: Deploy to Netlify
