@@ -38,6 +38,20 @@
 import SearchCard from "./components/SearchCard"
 import Example from "./components/Example"
 const  axios = require('axios'); //library used for making the requests
+import Vue from "vue";
+import * as Sentry from "@sentry/vue";
+import { Integrations } from "@sentry/tracing";
+
+Sentry.init({
+  Vue,
+  dsn: "https://3aeb4cacbff04c0ab1bedea0dcd2f613@o573091.ingest.sentry.io/5723239",
+  integrations: [new Integrations.BrowserTracing()],
+
+  // Set tracesSampleRate to 1.0 to capture 100%
+  // of transactions for performance monitoring.
+  // We recommend adjusting this value in production
+  tracesSampleRate: 1.0,
+});
 
   export default {
     name: 'App',
