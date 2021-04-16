@@ -3,7 +3,6 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './App.vue'
 const cors = require('cors');
-import Vue from "vue";
 import * as Sentry from "@sentry/vue";
 import { Integrations } from "@sentry/tracing";
 
