@@ -7,6 +7,7 @@
     "build": "vue-cli-service build"
   },
   "dependencies": {
+    "@sentry/browser": "^6.2.5",
     "@sentry/tracing": "^6.2.5",
     "@sentry/vue": "^6.2.5",
     "axios": "^0.21.0",
